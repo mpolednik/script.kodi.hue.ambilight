@@ -14,7 +14,7 @@ class Light(object):
         self.fullspectrum = ((spec['type'] == 'Color Light') or
                              (spec['type'] == 'Extended Color Light'))
         self.livingwhite = False
-        self.name = spec['name']
+        self.name = spec['name'].encode("utf-8")
 
         self.init_hue = None
         self.hue = None
