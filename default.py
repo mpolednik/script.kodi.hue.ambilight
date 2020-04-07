@@ -256,7 +256,7 @@ def run():
                         )
                         for i in range(len(hue.ambilight_controller.lights)):
                             algorithm.transition_colorspace(
-                                hue, hue.ambilight_controller.lights.values()[i], hsv_ratios[i], )
+                                hue, list(hue.ambilight_controller.lights.values())[i], list(hsv_ratios)[i], )
                 except ZeroDivisionError:
                     pass
 

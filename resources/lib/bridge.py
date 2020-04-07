@@ -106,10 +106,10 @@ def _discover_upnp():
 
     for _ in range(10):
         try:
-            sock.sendto(data, address)
+            sock.sendto(data.encode('utf-8'), address)
             recv, addr = sock.recvfrom(2048)
-            if 'IpBridge' in recv and 'description.xml' in recv:
-                bridge_ip = recv.split('LOCATION: http://')[1].split(':')[0]
+            if str('IpBridge').encode('utf-8') in recv and str('description.xml').encode('utf-8') in recv:
+                bridge_ip = str(recv).split('LOCATION: http://')[1].split(':')[0]
                 break
             time.sleep(3)
         except socket.timeout:

@@ -71,7 +71,7 @@ class Settings():
 
     def update(self, **kwargs):
         self.__dict__.update(**kwargs)
-        for k, v in kwargs.iteritems():
+        for k, v in kwargs.items():
             __addon__.setSetting(k, str(v))
 
     def __repr__(self):
